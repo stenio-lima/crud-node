@@ -17,4 +17,12 @@ server.get('/countries', (req, res) => {
   return res.json(countries)
 })
 
+// create new country
+server.post('/countries', (req, res) => {
+  const { name } = req.body
+  countries.push(name)
+
+  return res.json(countries)
+})
+
 server.listen(3000)
