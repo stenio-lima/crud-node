@@ -9,7 +9,7 @@ const countries = ['Brazil', 'Holanda', 'Monaco']
 server.get('/countries/:index', (req, res) => {
   const { index } = req.params
 
-  return this.json(countries[index])
+  return res.json(countries[index])
 })
 
 // return all countries
@@ -27,7 +27,7 @@ server.post('/countries', (req, res) => {
 
 // update country
 server.put('countries/:index', (req, res) => {
-  const { index } = req.name
+  const { index } = req.params
   const { name } = req.body
 
   countries[index] = name
@@ -44,3 +44,5 @@ server.delete('/countries/:index', (req, res) => {
 })
 
 server.listen(3000)
+
+// CRUD --> create, read, update, delete.
