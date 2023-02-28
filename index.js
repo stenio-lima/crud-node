@@ -25,4 +25,14 @@ server.post('/countries', (req, res) => {
   return res.json(countries)
 })
 
+// update country
+server.put('countries/:index', (req, res) => {
+  const { index } = req.name
+  const { name } = req.body
+
+  countries[index] = name
+
+  return res.json(countries)
+})
+
 server.listen(3000)
