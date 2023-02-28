@@ -12,4 +12,9 @@ server.get('/countries/:index', (req, res) => {
   return this.json(countries[index])
 })
 
+// return all countries
+server.get('/countries', (req, res) => {
+  return res.json(countries)
+})
+
 server.listen(3000)
